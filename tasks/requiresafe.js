@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 
         var exists = Fs.existsSync(pkgFile);
         if (exists) {
-            payload.pkg = pkgFile;
+            payload.package = pkgFile;
         } else {
           grunt.log.writeln('Can\'t load ' + pkgFile);
         }
@@ -57,6 +57,7 @@ module.exports = function (grunt) {
             grunt.log.write('\n');
 
           });
+
           grunt.fail.warn(Chalk.red('(+) ') + data.length + ' vulnerabilities found\n');
           done();
         });
