@@ -4,7 +4,7 @@
   "description": "Run requireSafe as a grunt task",
   "main": "index.js",
   "scripts": {
-    "test": "lab -a code -t 100 -L"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
@@ -27,11 +27,11 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "cli-table": "^0.3.1",
-    "grunt": "^0.4.5",
-    "requiresafe": "requiresafe/cli#mulligan"
+    "requiresafe": "^2.0.3"
   },
   "devDependencies": {
     "code": "^1.5.0",
-    "lab": "^6.1.0"
+    "lab": "^6.1.0",
+    "grunt": "^0.4.5"
   }
 }
