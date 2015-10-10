@@ -6,23 +6,19 @@ var RequireSafe = require('requiresafe');
 
 module.exports = function (grunt) {
 
-    grunt.registerTask('requiresafe-check', 'Audits package.json / shrinkwrap agains the requireSafe (+) API', function () {
+    grunt.registerTask('requiresafe', 'Audits package.json / shrinkwrap agains the requireSafe (+) API', function () {
 
         var done = this.async();
-        var pkgFile = Path.join(process.cwd(), 'package.json');
-        var shrinkwrapFile = Path.join(process.cwd(), 'npm-shrinkwrap.json');
+        var config = grunt.config.get('requiresafe');
+
         var payload = {};
 
-        var exists = Fs.existsSync(pkgFile);
-        if (exists) {
-            payload.package = pkgFile;
-        } else {
-          grunt.log.writeln('Can\'t load ' + pkgFile);
+        if (config.package) {
+          payload.package = config.package;
         }
 
-        exists = Fs.existsSync(shrinkwrapFile);
-        if (exists) {
-            payload.shrinkwrap = shrinkwrapFile;
+        if (config.shrinkwrap) {
+          payload.shrinkwrap = config.shrinkwrap;
         }
 
         RequireSafe.check(payload, function (err, data) {
