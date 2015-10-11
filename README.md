@@ -30,5 +30,15 @@ This package supports the following options. At least ONE of the following optio
 - package (object): The contents of a single package.json file
 - shrinkwrap (object): The contents of a single npm-shrinkwrap.json file
 
+## Command Line Options
+
+    --package
+        Path to a package.json file
+        Example `grunt requiresafe --package ./package.json`
+        
+    --shrinkwrap
+        Path to a npm-shrinkwrap.json file
+        Example `grunt requiresafe --shrinkwrap ./npm-shrinkwrap.json`
+
 
 

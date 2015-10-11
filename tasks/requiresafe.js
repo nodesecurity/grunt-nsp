@@ -21,6 +21,16 @@ module.exports = function (grunt) {
           payload.shrinkwrap = config.shrinkwrap;
         }
 
+        // Command line option --package
+        if (grunt.option('package')) {
+          payload.package = grunt.file.readJSON(grunt.option('package'));
+        }
+
+        // Command line option --shrinkwrap
+        if (grunt.option('shrinkwrap')) {
+          payload.package = grunt.file.readJSON(grunt.option('shrinkwrap'));
+        }
+
         RequireSafe.check(payload, function (err, data) {
 
           if (err) {
