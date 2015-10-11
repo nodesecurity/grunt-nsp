@@ -1,8 +1,12 @@
 module.exports = function (grunt) {
 
-    grunt.initConfig({});
+    grunt.initConfig({
+      requiresafe: {
+        package: grunt.file.readJSON('package.json')
+      }
+    });
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('default', ['requiresafe-check']);
+    grunt.registerTask('default', ['requiresafe']);
 };
