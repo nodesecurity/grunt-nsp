@@ -19,7 +19,7 @@
     "gruntplugin"
   ],
   "author": "^Lift Security",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/requiresafe/grunt-requiresafe/issues"
   },
