@@ -25,10 +25,10 @@ grunt.loadNpmTasks('grunt-requiresafe');
 ```
 
 ## Options
-This package supports the following options. At least ONE of the following options is required.
+This package supports the following options.
 
-- package (object): The contents of a single package.json file
-- shrinkwrap (object): The contents of a single npm-shrinkwrap.json file
+- package (object): The contents of a single package.json file [required]
+- shrinkwrap (object): The contents of a single npm-shrinkwrap.json file (optional, but is a much more efficient check)
 
 ## Command Line Options
 
