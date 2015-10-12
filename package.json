@@ -1,6 +1,6 @@
 {
   "name": "grunt-requiresafe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run requireSafe as a grunt task",
   "main": "index.js",
   "scripts": {
