@@ -139,7 +139,7 @@
       "version": "1.0.10"
     },
     "requiresafe": {
-      "version": "2.0.3",
+      "version": "2.1.1",
       "dependencies": {
         "@requiresafe/npm-utils": {
           "version": "2.5.3",
