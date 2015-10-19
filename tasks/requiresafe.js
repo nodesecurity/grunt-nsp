@@ -44,7 +44,8 @@ module.exports = function (grunt) {
 
       if (data.length === 0) {
 
-        return grunt.log.writeln(Chalk.green('(+)') + ' No known vulnerabilities found');
+        grunt.log.writeln(Chalk.green('(+)') + ' No known vulnerabilities found');
+        return done();
       }
 
       data.map(function (finding) {
