@@ -1,16 +1,23 @@
 {
   "name": "grunt-requiresafe",
-  "version": "1.1.2",
   "description": "Run requireSafe as a grunt task",
-  "main": "index.js",
-  "scripts": {
-    "test": "grunt",
-    "shrinkwrap": "npm shrinkwrap && shrinkydink"
+  "version": "1.1.2",
+  "author": "^Lift Security",
+  "bugs": {
+    "url": "https://github.com/requiresafe/grunt-requiresafe/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:requiresafe/grunt-requiresafe.git"
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cli-table": "^0.3.1",
+    "requiresafe": "^2.1.1"
   },
+  "devDependencies": {
+    "eslint": "^1.7.2",
+    "eslint-config-requiresafe": "^1.0.0",
+    "grunt": "^0.4.5",
+    "shrinkydink": "^1.0.0"
+  },
+  "homepage": "https://github.com/requiresafe/grunt-requiresafe#readme",
   "keywords": [
     "grunt",
     "security",
@@ -19,19 +26,15 @@
     "grunt",
     "gruntplugin"
   ],
-  "author": "^Lift Security",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/requiresafe/grunt-requiresafe/issues"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:requiresafe/grunt-requiresafe.git"
   },
-  "homepage": "https://github.com/requiresafe/grunt-requiresafe#readme",
-  "dependencies": {
-    "chalk": "^1.1.1",
-    "cli-table": "^0.3.1",
-    "requiresafe": "^2.1.1"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "shrinkydink": "^1.0.0"
+  "scripts": {
+    "lint": "eslint .",
+    "shrinkwrap": "npm shrinkwrap && shrinkydink",
+    "test": "grunt"
   }
 }
