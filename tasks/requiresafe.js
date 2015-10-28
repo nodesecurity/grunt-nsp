@@ -34,7 +34,8 @@ module.exports = function (grunt) {
     RequireSafe.check(payload, function (err, data) {
 
       if (err) {
-        return grunt.log.writeln(Chalk.yellow('(+) ') + err);
+        grunt.log.writeln(Chalk.yellow('(+) ') + err);
+        return done();
       }
 
       var width = 80;
