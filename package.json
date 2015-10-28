@@ -1,7 +1,7 @@
 {
   "name": "grunt-requiresafe",
   "description": "Run requireSafe as a grunt task",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "^Lift Security",
   "bugs": {
     "url": "https://github.com/requiresafe/grunt-requiresafe/issues"
