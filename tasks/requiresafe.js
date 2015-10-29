@@ -2,14 +2,14 @@
 
 var Chalk = require('chalk');
 var Table = require('cli-table');
-var RequireSafe = require('requiresafe');
+var Nsp = require('nsp');
 
 module.exports = function (grunt) {
 
-  grunt.registerTask('requiresafe', 'Audits package.json / shrinkwrap agains the requireSafe (+) API', function () {
+  grunt.registerTask('nsp', 'Audits package.json / shrinkwrap agains the Node Security (+) API', function () {
 
     var done = this.async();
-    var config = grunt.config.get('requiresafe');
+    var config = grunt.config.get('nsp');
 
     var payload = {};
 
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
       payload.shrinkwrap = grunt.file.readJSON(grunt.option('shrinkwrap'));
     }
 
-    RequireSafe.check(payload, function (err, data) {
+    Nsp.check(payload, function (err, data) {
 
       if (err) {
         grunt.log.writeln(Chalk.yellow('(+) ') + err);
