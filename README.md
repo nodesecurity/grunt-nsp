@@ -1,5 +1,5 @@
-# grunt-requiresafe
-> Checks your package.json / npm-shrinkwrap.json against the requireSafe(+) API for dependencies with known vulnerabilities.
+# grunt-nsp
+> Checks your package.json / npm-shrinkwrap.json against the Node Security (+) API for dependencies with known vulnerabilities.
 
 
 ## Getting Started
@@ -9,19 +9,19 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-requiresafe --save-dev
+npm install grunt-nsp --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
 grunt.initConfig({
-  requiresafe: {
+  nsp: {
     package: grunt.file.readJSON('package.json')
   }
 });
 
-grunt.loadNpmTasks('grunt-requiresafe');
+grunt.loadNpmTasks('grunt-nsp');
 ```
 
 ## Options
@@ -32,13 +32,13 @@ This package supports the following options.
 
 ## Command Line Options
 
---package  
-Path to a package.json file  
-Example `grunt requiresafe --package ./package.json`
-    
---shrinkwrap  
-Path to a npm-shrinkwrap.json file  
-Example `grunt requiresafe --shrinkwrap ./npm-shrinkwrap.json`
+--package
+Path to a package.json file
+Example `grunt nsp --package ./package.json`
+
+--shrinkwrap
+Path to a npm-shrinkwrap.json file
+Example `grunt nsp --shrinkwrap ./npm-shrinkwrap.json`
 
 
 

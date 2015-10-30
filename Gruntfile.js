@@ -3,12 +3,12 @@
 module.exports = function (grunt) {
 
   grunt.initConfig({
-    requiresafe: {
+    nsp: {
       package: grunt.file.readJSON('package.json')
     }
   });
 
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['requiresafe']);
+  grunt.registerTask('default', ['nsp']);
 };
