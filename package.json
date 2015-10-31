@@ -1,7 +1,7 @@
 {
   "name": "grunt-nsp",
   "description": "Run Node Security as a grunt task",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "^Lift Security",
   "bugs": {
     "url": "https://github.com/nodesecurity/grunt-nsp/issues"
