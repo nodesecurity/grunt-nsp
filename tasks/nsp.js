@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     var config = grunt.config.get('nsp');
 
     var payload = {};
+    var formatter = Nsp.formatters.default;
 
     if (config.package) {
       payload.package = config.package;
@@ -19,6 +20,10 @@ module.exports = function (grunt) {
 
     if (config.shrinkwrap) {
       payload.shrinkwrap = config.shrinkwrap;
+    }
+
+    if (config.output) {
+      formatter = Nsp.formatters[config.output];
     }
 
     // Command line option --package
@@ -31,43 +36,22 @@ module.exports = function (grunt) {
       payload.shrinkwrap = grunt.file.readJSON(grunt.option('shrinkwrap'));
     }
 
+    if (grunt.option('output')) {
+      formatter = Nsp.formatters[grunt.option('output')];
+    }
+
+
     Nsp.check(payload, function (err, data) {
 
-      if (err) {
-        grunt.log.writeln(Chalk.yellow('(+) ') + err);
+      var output = formatter(err, data);
+      if (err || data.length > 0) {
+        grunt.fail.warn(output);
         return done();
       }
 
-      var width = 80;
-      if (process.stdout.isTTY) {
-        width = process.stdout.getWindowSize()[0] - 10;
-      }
-
-      if (data.length === 0) {
-
-        grunt.log.writeln(Chalk.green('(+)') + ' No known vulnerabilities found');
-        return done();
-      }
-
-      data.map(function (finding) {
-
-        var table = new Table({
-          head: ['', finding.title],
-          colWidths: [15, width - 15]
-        });
-
-        table.push(['Name', finding.module]);
-        table.push(['Version', finding.version]);
-        table.push(['Path', finding.path]);
-        table.push(['More Info', finding.advisory]);
-
-        grunt.log.write(table.toString());
-        grunt.log.write('\n');
-
-      });
-
-      grunt.fail.warn(Chalk.red('(+) ') + data.length + ' vulnerabilities found\n');
-      done();
+      // No error or findings
+      grunt.log.write(output);
+      return done();
     });
 
 
