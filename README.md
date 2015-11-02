@@ -29,6 +29,7 @@ This package supports the following options.
 
 - package (object): The contents of a single package.json file [required]
 - shrinkwrap (object): The contents of a single npm-shrinkwrap.json file (optional, but is a much more efficient check)
+- output (string): Adjust the output format to any formatter supported by [nsp](https://github.com/nodesecurity/nsp)
 
 ## Command Line Options
 
@@ -40,5 +41,7 @@ Example `grunt nsp --package ./package.json`
 Path to a npm-shrinkwrap.json file
 Example `grunt nsp --shrinkwrap ./npm-shrinkwrap.json`
 
-
+--output
+nsp output formatter to use
+Example `grunt nsp --package ./package.json --output summary
 
