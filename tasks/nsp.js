@@ -21,7 +21,12 @@ module.exports = function (grunt) {
     }
 
     if (config.output) {
-      formatter = Nsp.formatters[config.output];
+      var formatters = Object.keys(Nsp.formatters);
+      if (formatters.indexOf(config.output) !== -1) {
+        formatter = Nsp.formatters[config.output];
+      } else {
+        grunt.log.write('Invalid formatter specified in config. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
+      }
     }
 
     // Command line option --package
@@ -36,8 +41,13 @@ module.exports = function (grunt) {
 
     if (grunt.option('output')) {
       formatter = Nsp.formatters[grunt.option('output')];
-    }
 
+      if (formatters.indexOf(config.output) !== -1) {
+        formatter = Nsp.formatters[grunt.option('output')];
+      } else {
+        grunt.log.write('Invalid formatter specified in options. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
+      }
+    }
 
     Nsp.check(payload, function (err, data) {
 
