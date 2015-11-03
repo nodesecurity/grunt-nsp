@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "eslint": "^1.7.3",
-    "eslint-config-requiresafe": "^1.0.0",
+    "eslint-config-requiresafe": "^1.1.0",
     "grunt": "^0.4.5",
     "shrinkydink": "^1.0.0"
   },
