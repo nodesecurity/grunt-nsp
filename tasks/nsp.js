@@ -21,11 +21,11 @@ module.exports = function (grunt) {
     }
 
     if (config.output) {
-      var formatters = Object.keys(Nsp.formatters);
-      if (formatters.indexOf(config.output) !== -1) {
+
+      if (Nsp.formatters.hasOwnProperty(config.output)) {
         formatter = Nsp.formatters[config.output];
       } else {
-        grunt.log.write('Invalid formatter specified in config. Must be one of ' + formatters.join(',') + '\n');
+        grunt.log.write('Invalid formatter specified in config. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
       }
     }
 
@@ -40,11 +40,11 @@ module.exports = function (grunt) {
     }
 
     if (grunt.option('output')) {
-      var formatters = Object.keys(Nsp.formatters);
-      if (formatters.indexOf(grunt.option('output')) !== -1) {
+
+      if (Nsp.formatters.hasOwnProperty(grunt.option('output'))) {
         formatter = Nsp.formatters[grunt.option('output')];
       } else {
-        grunt.log.write('Invalid formatter specified in options. Must be one of ' + formatters.join(',') + '\n');
+        grunt.log.write('Invalid formatter specified in options. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
       }
     }
 
