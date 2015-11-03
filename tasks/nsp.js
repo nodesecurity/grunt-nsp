@@ -1,7 +1,5 @@
 'use strict';
 
-var Chalk = require('chalk');
-var Table = require('cli-table');
 var Nsp = require('nsp');
 
 module.exports = function (grunt) {
