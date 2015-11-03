@@ -7,14 +7,13 @@
     "url": "https://github.com/nodesecurity/grunt-nsp/issues"
   },
   "dependencies": {
-    "chalk": "^1.1.1",
-    "cli-table": "^0.3.1",
-    "nsp": "^2.0.0"
+    "nsp": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^1.7.3",
-    "eslint-config-requiresafe": "^1.0.0",
+    "eslint-config-nodesecurity": "^1.0.0",
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "shrinkydink": "^1.0.0"
   },
   "homepage": "https://github.com/nodesecurity/grunt-nsp#readme",
@@ -23,7 +22,7 @@
     "grunt",
     "gruntplugin",
     "nodesecurity",
-    "requiresafe",
+    "nsp",
     "security"
   ],
   "license": "Apache-2.0",
