@@ -24,7 +24,8 @@ module.exports = function (grunt) {
 
       if (Nsp.formatters.hasOwnProperty(config.output)) {
         formatter = Nsp.formatters[config.output];
-      } else {
+      }
+      else {
         grunt.log.write('Invalid formatter specified in config. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
       }
     }
@@ -43,7 +44,8 @@ module.exports = function (grunt) {
 
       if (Nsp.formatters.hasOwnProperty(grunt.option('output'))) {
         formatter = Nsp.formatters[grunt.option('output')];
-      } else {
+      }
+      else {
         grunt.log.write('Invalid formatter specified in options. Must be one of ' + Object.keys(Nsp.formatters).join(',') + '\n');
       }
     }
