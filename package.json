@@ -7,7 +7,7 @@
     "url": "https://github.com/nodesecurity/grunt-nsp/issues"
   },
   "dependencies": {
-    "nsp": "^2.0.1"
+    "nsp": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^2.5.3",
